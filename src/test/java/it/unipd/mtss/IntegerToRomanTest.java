@@ -5,10 +5,14 @@
 
 package it.unipd.mtss;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
+
 public class IntegerToRomanTest {
     @Test
-    public void testConvert_OnNull(){
-        assertEquals(null,IntegerToRoman.convert(null));
+    public void testConvert_OnNull() {
+        Assertions.assertEquals(null, IntegerToRoman.convert(0));
     }
 
 }
