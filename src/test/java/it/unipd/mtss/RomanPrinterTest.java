@@ -53,12 +53,18 @@ public class RomanPrinterTest {
                         " \\ V / \n" + //
                         "  > <  \n" + //
                         " / . \\ \n" + //
-                        "/_/ \\_\\\n"));
+                        "/_/ \\_\\\n"),
+                Arguments.of(20, "__   ____   __\n" + //
+                        "\\ \\ / /\\ \\ / /\n" + //
+                        " \\ V /  \\ V / \n" + //
+                        "  > <    > <  \n" + //
+                        " / . \\  / . \\ \n" + //
+                        "/_/ \\_\\/_/ \\_\\\n"));
     }
 
     @ParameterizedTest
     @MethodSource("inputsAndResults")
-    public void testPrint_OnNull(int number, String expectedOutput) {
+    public void testPrint_OnValidNumber(int number, String expectedOutput) {
         Assertions.assertEquals(expectedOutput, RomanPrinter.print(number));
     }
 
