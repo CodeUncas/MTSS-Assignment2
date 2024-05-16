@@ -80,6 +80,17 @@ public class RomanPrinter {
                 "|_____/ ",
             }
         );
+        dictionary.put(
+            'M', 
+            new String[]{
+                " __  __ ",
+                "|  \\/  |",
+                "| \\  / |",
+                "| |\\/| |",
+                "| |  | |",
+                "|_|  |_|",
+            }
+        );
     }
 
     public static String print(int num) {
