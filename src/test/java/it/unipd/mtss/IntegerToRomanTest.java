@@ -18,7 +18,6 @@ public class IntegerToRomanTest {
     private static Stream<Arguments> inputsAndResults() {
 
         return Stream.of(
-                Arguments.of(0, "Invalid number"),
                 Arguments.of(1, "I"),
                 Arguments.of(2, "II"),
                 Arguments.of(3, "III"),
@@ -46,4 +45,16 @@ public class IntegerToRomanTest {
 
     }
 
+    @ParameterizedTest
+    @MethodSource("invalidNumbers")
+    void testConvert_OnInvalidNumbers(int input) {
+        Assertions.assertEquals("Invalid number", IntegerToRoman.convert(input));
+    }
+
+    private static Stream<Arguments> invalidNumbers() {
+        return Stream.of(
+                Arguments.of(0),
+                Arguments.of(1001),
+                Arguments.of(-10));
+    }
 }

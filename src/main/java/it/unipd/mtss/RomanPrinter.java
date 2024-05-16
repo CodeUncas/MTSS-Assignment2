@@ -10,94 +10,88 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class RomanPrinter {
     private static final Map<Character, String[]> dictionary = new HashMap<>();
     static {
         dictionary.put(
-            'I', 
-            new String[]{
-                " _____ ",
-                "|_   _|",
-                "  | |  ",
-                "  | |  ",
-                " _| |_ ",
-                "|_____|"
-            }
-        );
+                'I',
+                new String[] {
+                        " _____ ",
+                        "|_   _|",
+                        "  | |  ",
+                        "  | |  ",
+                        " _| |_ ",
+                        "|_____|"
+                });
         dictionary.put(
-            'V', 
-            new String[]{
-                "__      __",
-                "\\ \\    / /",
-                " \\ \\  / / ",
-                "  \\ \\/ /  ",
-                "   \\  /   ",
-                "    \\/    ",
-            }
-        );
+                'V',
+                new String[] {
+                        "__      __",
+                        "\\ \\    / /",
+                        " \\ \\  / / ",
+                        "  \\ \\/ /  ",
+                        "   \\  /   ",
+                        "    \\/    ",
+                });
         dictionary.put(
-            'X', 
-            new String[]{
-                "__   __",
-                "\\ \\ / /",
-                " \\ V / ",
-                "  > <  ",
-                " / . \\ ",
-                "/_/ \\_\\",
-            }
-        );
+                'X',
+                new String[] {
+                        "__   __",
+                        "\\ \\ / /",
+                        " \\ V / ",
+                        "  > <  ",
+                        " / . \\ ",
+                        "/_/ \\_\\",
+                });
         dictionary.put(
-            'L', 
-            new String[]{
-                " _      ",
-                "| |     ",
-                "| |     ",
-                "| |     ",
-                "| |____ ",
-                "|______|",
-            }
-        );
+                'L',
+                new String[] {
+                        " _      ",
+                        "| |     ",
+                        "| |     ",
+                        "| |     ",
+                        "| |____ ",
+                        "|______|",
+                });
         dictionary.put(
-            'C', 
-            new String[]{
-                "  _____ ",
-                " / ____|",
-                "| |     ",
-                "| |     ",
-                "| |____ ",
-                " \\_____|",
-            }
-        );
+                'C',
+                new String[] {
+                        "  _____ ",
+                        " / ____|",
+                        "| |     ",
+                        "| |     ",
+                        "| |____ ",
+                        " \\_____|",
+                });
         dictionary.put(
-            'D', 
-            new String[]{
-                " _____  ",
-                "|  __ \\ ",
-                "| |  | |",
-                "| |  | |",
-                "| |__| |",
-                "|_____/ ",
-            }
-        );
+                'D',
+                new String[] {
+                        " _____  ",
+                        "|  __ \\ ",
+                        "| |  | |",
+                        "| |  | |",
+                        "| |__| |",
+                        "|_____/ ",
+                });
         dictionary.put(
-            'M', 
-            new String[]{
-                " __  __ ",
-                "|  \\/  |",
-                "| \\  / |",
-                "| |\\/| |",
-                "| |  | |",
-                "|_|  |_|",
-            }
-        );
+                'M',
+                new String[] {
+                        " __  __ ",
+                        "|  \\/  |",
+                        "| \\  / |",
+                        "| |\\/| |",
+                        "| |  | |",
+                        "|_|  |_|",
+                });
     }
 
     public static String print(int num) {
-        return printAsciiArt(IntegerToRoman.convert(num));
+        String nConv = IntegerToRoman.convert(num);
+        return nConv.equals("Invalid number") ? nConv : printAsciiArt(nConv);
     }
 
     private static String printAsciiArt(String romanNumber) {
+
         List<String[]> conversion = new ArrayList<>();
         for (Character c : romanNumber.toCharArray()) {
             conversion.add(dictionary.get(c));

@@ -116,4 +116,17 @@ public class RomanPrinterTest {
         Assertions.assertEquals(expectedOutput, RomanPrinter.print(number));
     }
 
+    @ParameterizedTest
+    @MethodSource("invalidNumbers")
+    public void testPrint_OnInvalidNumber(int number) {
+        Assertions.assertEquals("Invalid number", RomanPrinter.print(number));
+    }
+
+    private static Stream<Arguments> invalidNumbers() {
+        return Stream.of(
+                Arguments.of(0),
+                Arguments.of(1001),
+                Arguments.of(-10));
+    }
+
 }
