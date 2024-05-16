@@ -20,7 +20,10 @@ public class IntegerToRomanTest {
         return Stream.of(
                 Arguments.of(1, "I"),
                 Arguments.of(2, "II"),
-                Arguments.of(3, "III")   
+                Arguments.of(3, "III"),
+                Arguments.of(0, "Invalid number"),
+                //Arguments.of(null, "Invalid number"),
+                Arguments.of(4, "Invalid number")     
         );
     }
 

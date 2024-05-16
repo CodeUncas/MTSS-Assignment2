@@ -7,9 +7,12 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
     public static String convert(int number) {
+        if (number < 1 || number > 3) {
+            return "Invalid number";
+        }
         String numberConverted = "";
-        while(number >=1){
-            numberConverted+="I";
+        while (number >= 1) {
+            numberConverted += "I";
             number--;
         }
         return numberConverted;
