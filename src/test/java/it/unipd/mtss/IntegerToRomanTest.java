@@ -47,7 +47,7 @@ public class IntegerToRomanTest {
 
     @ParameterizedTest
     @MethodSource("invalidNumbers")
-    void testConvert_OnInvalidNumbers(int input) {
+    public void testConvert_OnInvalidNumbers(int input) {
         Assertions.assertEquals("Invalid number", IntegerToRoman.convert(input));
     }
 
@@ -57,4 +57,11 @@ public class IntegerToRomanTest {
                 Arguments.of(1001),
                 Arguments.of(-10));
     }
+    //Test in order to get 100% code coverage
+    @Test
+    public void testConstructor_createIstanceIntegerToRoman(){
+        IntegerToRoman istance = new IntegerToRoman();
+        Assertions.assertNotNull(istance);
+    }
+
 }

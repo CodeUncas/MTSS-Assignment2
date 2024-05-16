@@ -128,5 +128,11 @@ public class RomanPrinterTest {
                 Arguments.of(1001),
                 Arguments.of(-10));
     }
+    //Test in order to get 100% code coverage
+    @Test
+    public void testConstructor_createIstanceRomanPrinter(){
+        RomanPrinter istance = new RomanPrinter();
+        Assertions.assertNotNull(istance);
+    }
 
 }
