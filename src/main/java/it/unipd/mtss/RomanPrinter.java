@@ -58,6 +58,17 @@ public class RomanPrinter {
                 "|______|",
             }
         );
+        dictionary.put(
+            'C', 
+            new String[]{
+                "  _____ ",
+                " / ____|",
+                "| |     ",
+                "| |     ",
+                "| |____ ",
+                " \\_____|",
+            }
+        );
     }
 
     public static String print(int num) {

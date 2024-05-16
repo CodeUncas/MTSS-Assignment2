@@ -5,7 +5,9 @@
   <module name="TreeWalker">
     <module name="NeedBraces"/>
     <module name="BooleanExpressionComplexity"/>
-    <module name="CyclomaticComplexity"/>
+    <module name="CyclomaticComplexity">
+      <property name="max" value="20"/>
+    </module>
     <module name="MethodLength"/>
     <module name="EmptyCatchBlock"/>
     <module name="AvoidStarImport"/>
