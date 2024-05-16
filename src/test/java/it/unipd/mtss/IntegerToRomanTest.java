@@ -33,14 +33,15 @@ public class IntegerToRomanTest {
                 Arguments.of(90, "XC"),
                 Arguments.of(100, "C"),
                 Arguments.of(400, "CD"),
-                Arguments.of(500, "D"));
-
+                Arguments.of(500, "D"),
+                Arguments.of(900, "CM"),
+                Arguments.of(1000, "M"));
 
     }
 
     @ParameterizedTest
     @MethodSource("inputsAndResults")
-    public void testConvert_FirstFivehundredNumbers(int number, String expectedResult) {
+    public void testConvert_FirstThousandNumbers(int number, String expectedResult) {
         Assertions.assertEquals(expectedResult, IntegerToRoman.convert(number));
 
     }
