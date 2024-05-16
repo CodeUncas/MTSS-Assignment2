@@ -6,13 +6,32 @@
 package it.unipd.mtss;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class IntegerToRomanTest {
-    @Test
-    public void testConvert_OnNull() {
-        Assertions.assertEquals(null, IntegerToRoman.convert(0));
+    private static Stream<Arguments> inputsAndResults() {
+
+        return Stream.of(
+                Arguments.of(1, "I"),
+                Arguments.of(2, "II"),
+                Arguments.of(3, "III"),
+                Arguments.of(0, "Invalid number"),
+                //Arguments.of(null, "Invalid number"),
+                Arguments.of(4, "Invalid number")     
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("inputsAndResults")
+    public void testConvert_FirstThreeNumbers(int number, String expectedResult) {
+        Assertions.assertEquals(expectedResult, IntegerToRoman.convert(number));
+
     }
 
 }
