@@ -7,10 +7,18 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
     public static String convert(int number) {
-        if (number < 1 || number > 50) {
+        if (number < 1 || number > 100) {
             return "Invalid number";
         }
         String numberConverted = "";
+        while (number >= 100) {
+            numberConverted += "C";
+            number -= 100;
+        }
+        while (number >= 90) {
+            numberConverted += "XC";
+            number -= 90;
+        }
         while (number >= 50) {
             numberConverted += "L";
             number -= 50;
@@ -23,7 +31,7 @@ public class IntegerToRoman {
             numberConverted += "X";
             number -= 10;
         }
-        while (number >= 9) {
+        while (number == 9) {
             numberConverted += "IX";
             number -= 9;
         }
@@ -31,7 +39,7 @@ public class IntegerToRoman {
             numberConverted += "V";
             number -= 5;
         }
-        while (number >= 4) {
+        while (number == 4) {
             numberConverted += "IV";
             number -= 4;
         }
