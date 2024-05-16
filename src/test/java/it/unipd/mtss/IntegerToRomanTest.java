@@ -27,12 +27,15 @@ public class IntegerToRomanTest {
                 Arguments.of(6, "VI"),
                 Arguments.of(9, "IX"),
                 Arguments.of(10, "X"),
-                Arguments.of(20, "XX"));
+                Arguments.of(20, "XX"),
+                Arguments.of(40, "XL"),
+                Arguments.of(50, "L"));
+
     }
 
     @ParameterizedTest
     @MethodSource("inputsAndResults")
-    public void testConvert_FirstTwentyNumbers(int number, String expectedResult) {
+    public void testConvert_FirstFiftyNumbers(int number, String expectedResult) {
         Assertions.assertEquals(expectedResult, IntegerToRoman.convert(number));
 
     }
